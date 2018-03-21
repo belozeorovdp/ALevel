@@ -1,0 +1,42 @@
+package hw12.task2.position.impl;
+
+import hw12.task2.position.Position;
+import hw12.task2.position.impl.abst.AbstractPosition;
+
+public class PlaceZero extends AbstractPosition
+{
+    public PlaceZero(double price, String name)
+    {
+        super(price, name);
+    }
+
+    // 1 вариант сортировка по цене
+    /*
+    @Override
+    public int compareTo(Position o)
+    {
+        if (this.getPrice() < o.getPrice())
+        {
+            return 1;
+        }
+        else if (this.getPrice() > o.getPrice())
+        {
+            return -1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    */
+    // 2 вариант сортировка по имени
+    @Override
+    public int compareTo(Position o)
+    {
+
+        String str1 = this.getName();
+        String str2 = o.getName();
+        return -str1.compareTo(str2);
+    }
+
+}
