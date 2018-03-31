@@ -1,0 +1,51 @@
+-- создание базы данных
+
+CREATE DATABASE shop;
+
+create table posicion (
+id       int         AUTO_INCREMENT,
+name     varchar(50) NOT NULL,
+price    float       NOT NULL,
+quanttly int         NOT NULL,
+PRIMARY KEY (id)
+); 
+
+create table status (
+id       int         AUTO_INCREMENT,
+name     varchar(50) NOT NULL,
+PRIMARY KEY (id)
+); 
+
+create table user (
+id       int         AUTO_INCREMENT,
+name     varchar(50) NOT NULL,
+email    varchar(50) NOT NULL,
+passhash int         NOT NULL,
+PRIMARY KEY (id)
+); 
+
+create table order (
+id        int        AUTO_INCREMENT,
+date      DATE       NOT NULL,
+price     float      NOT NULL,
+user_id   int        NOT NULL, 
+status_id int        NOT NULL, 
+PRIMARY KEY (id),
+FOREIGN KEY (status_id) REFERENCES status (id),
+FOREIGN KEY (user_id)   REFERENCES user   (id)
+); 
+
+create table order_posicion (
+order_id    int      NOT NULL,
+posicion_id int      NOT NULL, 
+quanttly    int      NOT NULL,
+
+FOREIGN KEY (order_id)     REFERENCES order (id),
+FOREIGN KEY (posicion_id)  REFERENCES posicion (id)
+); 
+
+
+
+
+
+
