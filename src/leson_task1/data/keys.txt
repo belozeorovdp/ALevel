@@ -1,0 +1,4 @@
+statuses one-to-many orders(status_id)
+users one-to-one orders(user_id)
+orders one-to-many orders_posicion(order_id)
+posicion one-to-many orders_posicion(posicion_id)

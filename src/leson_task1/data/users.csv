@@ -1,0 +1,6 @@
+id, name, email, passhash
+01, Ivanov, ivanov@mail.com, 1111 
+02, Petrov, petrov@mail.com, 2222
+03, Vasilev, vasilev@mail.com, 333  
+04, Sudorenko, sudorenko@mail.com, 444 
+05, Kononenko, kononenko@mail@com, 555
