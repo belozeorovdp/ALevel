@@ -33,15 +33,13 @@ public class Main
     private static  void writingFile(String dirFile)
     {
         String nameFile = dirFile + "text.txt";
-        try
-        {
-            File statText = new File(nameFile);
-            FileOutputStream is = new FileOutputStream(statText);
+        File statText = new File(nameFile);
+        try(FileOutputStream is = new FileOutputStream(statText);
             OutputStreamWriter osw = new OutputStreamWriter(is);
-            Writer w = new BufferedWriter(osw);
+            Writer w = new BufferedWriter(osw))
+        {
             File dir = new File(dirFile);
             listAll(dir, w);
-            w.close();
         }
         catch (IOException e)
         {
